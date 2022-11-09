@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripy - Plan a Trip</title>
+    <link rel="icon" href="Trippy.png">
+    <script src="https://kit.fontawesome.com/5598f0038c.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        font-family: sans-serif;
+    }
+
+    body {
+        width: 1140px;
+        margin: auto;
+        display: block;
+    }
+
+    #topCards {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 2%;
+    }
+
+    #topCards>div {
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        padding: 1%1%;
+        font-weight: 500;
+
+    }
+
+    #topCards>div:hover {
+        background-color: black;
+        color: white;
+        fill: white;
+    }
+
+    .space {
+        width: 40px;
+    }
+
+    .search {
+        display: block;
+        margin: auto;
+        width: 1135px;
+        height: 348px;
+        background-image: url("https://static.tacdn.com/img2/brand/home/homemar2022_dt_trans.webp");
+        display: flex;
+        align-items: center;
+        margin-bottom: 5%;
+    }
+
+    .searchBox {
+        background-color: white;
+        width: auto;
+        padding: 1%1%;
+        border-radius: 30px;
+        display: flex;
+        width: 730px;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        font-size: x-large;
+    }
+
+    .searchBox>input,
+    input::placeholder {
+        border: 0px;
+        font-size: large;
+        width: 100%;
+    }
+
+    p {
+        color: rgb(108, 108, 108);
+        margin-top: 0px;
+    }
+
+    .boxCards {
+        height: 220px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        overflow: hidden;
+        margin-bottom: 7%;
+    }
+
+    .boxCards>img {
+        width: 220px;
+    }
+
+    .boxCards>img:hover {
+        height: 230px;
+    }
+
+    .boxName>h1 {
+        width: 220px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px -70px 36px -28px inset;
+    }
+
+    .boxName {
+
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        position: absolute;
+        top: 767px;
+        color: white;
+    }
+
+    .moreToExplore {
+        background-color: rgba(127, 255, 212, 0.503);
+        margin: 0%-33.5%;
+        margin-bottom: 6%;
+    }
+
+    .moreToExplore>div {
+        width: 1180px;
+        margin: auto;
+        display: block;
+        ;
+        padding: 2%0%;
+    }
+
+    #expCards {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    #expCards img {
+        height: 230px;
+
+    }
+
+    #expCards div {
+        width: 365px;
+        overflow: hidden;
+        background-color: aquamarine;
+    }
+
+    .moreToExplore h2 {
+        padding-left: 1%;
+    }
+
+    .boxName-2>h1 {
+        width: 220px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px -70px 36px -28px inset;
+    }
+
+    .boxName-2 {
+
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 10px;
+        position: absolute;
+        top: 1607px;
+        color: white;
+        overflow: hidden;
+    }
+
+    .boxCards-2 {
+        height: 270px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        overflow: hidden;
+        margin-bottom: 7%;
+        scroll-behavior: smooth;
+
+    }
+
+    .boxCards-2>img {
+        width: 270px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #spacenav {
+        width: 400px;
+    }
+
+    header>div {
+        border-radius: 25px;
+        height: 40px;
+        padding: 0%2%;
+        display: flex;
+        align-items: center;
+    }
+
+    header>div:nth-last-child(1) {
+        margin-right: 0px;
+    }
+
+    header>div:nth-last-child(2) {
+        background-color: black;
+        color: white;
+    }
+
+    header>div:nth-last-child(2):hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+
+    header>div:hover {
+        background-color: rgba(0, 0, 0, 0.088);
+        cursor: pointer;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    #logo {
+        height: 70px;
+    }
+    footer{
+        background-color: rgba(127, 255, 212, 0.503);
+        margin: 0% ;
+        margin: 0%-33.5%;
+       
+    }
+    footer>div{
+        width: 1180px;
+        display: grid;
+        grid-template-columns:repeat(5,1fr) ;
+        margin-left: 18%;
+    }
+    footer li:hover{
+        font-style: oblique;
+        cursor: pointer;
+        padding: 5px;
+    }
+</style>
+
+<body>
+    <header>
+        <img id="logo" src="Trippy.png" class="pointer" alt="">
+        <h1 class="pointer">Trippy</h1>
+        <span id="spacenav"></span>
+        <div onclick="location.href='NotMadeYet.html'">
+            <h4><i class="fa-solid fa-pen"></i> Review</h4>
+        </div>
+        <div>
+            <h4><i class="fa-solid fa-heart"></i> Trips</h4>
+        </div>
+        <div>
+            <h4><i class="fa-solid fa-bell"></i> Alerts</h4>
+        </div>
+        <div>
+            <h4>Sign In</h4>
+        </div>
+        <div>
+            <h4><i class="fa-solid fa-cart-shopping"></i> Cart</h4>
+        </div>
+    </header>
+    <div id="topCards">
+        <div>Hotels
+            <span class="space"></span>
+            <span>
+                <svg viewBox="0 0 24 24" width="24px" height="24px">
+                    <path
+                        d="M20.587 12.139V4.144H3.424v7.986A3.805 3.805 0 002 15.097v4.755h1.906v-1.905h16.188v1.91H22v-4.76a3.804 3.804 0 00-1.413-2.958zm-1.906-6.09V8.83a5.048 5.048 0 00-2.865-.876c-1.565 0-2.952.69-3.816 1.749-.864-1.059-2.252-1.749-3.818-1.749-1.07 0-2.056.324-2.851.866V6.049h13.35zm-.258 5.248c-.077-.005-.155-.012-.234-.012h-4.971c.438-.838 1.437-1.426 2.598-1.426 1.168 0 2.173.593 2.607 1.438zm-7.643-.012H5.812c-.081 0-.159.007-.238.012.434-.844 1.438-1.438 2.606-1.438 1.163 0 2.163.588 2.6 1.426zM3.906 16.04v-.943c0-1.051.855-1.905 1.906-1.905h12.376c1.051 0 1.905.854 1.905 1.905v.943H3.906z">
+                    </path>
+                </svg>
+            </span>
+        </div>
+        <div>Vaccation Rentals
+            <span class="space"></span>
+            <span>
+                <svg viewBox="0 0 24 24" width="24px" height="24px">
+                    <path
+                        d="M12.001 2L2.097 8.6V22h19.807V8.6L12.001 2zm7.922 18.021H4.077V9.66l7.924-5.28 7.922 5.28v10.361z">
+                    </path>
+                    <path
+                        d="M9.036 10.627a2.973 2.973 0 00-2.97 2.968 2.974 2.974 0 002.97 2.971 2.964 2.964 0 002.788-1.98h2.152v1.979h1.98v-1.979h1.982v-1.979h-6.115a2.965 2.965 0 00-2.787-1.98zm0 3.959a.99.99 0 11-.002-1.978.99.99 0 01.002 1.978z">
+                    </path>
+                </svg>
+            </span>
+        </div>
+        <div>Things to Do
+            <span class="space"></span>
+            <span>
+                <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0">
+                    <circle cx="12" cy="8.5" r="1"></circle>
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <circle cx="12" cy="15.5" r="1"></circle>
+                    <path
+                        d="M20 6.5V8c-1.5.7-2.5 2.3-2.5 4 0 1.8 1 3.3 2.5 4v1.5H4V16c1.5-.7 2.5-2.3 2.5-4 0-1.8-1-3.3-2.5-4V6.5h16m2-2H2v5c1.4 0 2.5 1.1 2.5 2.5S3.4 14.5 2 14.5v5h20v-5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5v-5z">
+                    </path>
+                </svg>
+            </span>
+        </div>
+        <div>Restaurants
+            <span class="space"></span>
+            <span>
+                <span><svg viewBox="0 0 24 24" width="24px" height="24px">
+                        <path
+                            d="M18.753 21.459l-5.502-5.504-2.85 2.851-1.663-1.662-4.315 4.315-1.343-1.344 4.316-4.316-4.004-4.003A4.718 4.718 0 012 8.438c0-1.269.494-2.461 1.392-3.358l.834-.835 7.362 7.362.866-.866c-1.099-1.719-.777-3.972.912-5.661l2.538-2.538 1.343 1.344-2.538 2.537c-.785.787-1.254 1.903-.852 2.916l4.423-4.422 1.343 1.344-4.429 4.428c.31.13.64.188.977.164.646-.043 1.299-.364 1.838-.904a630.937 630.937 0 002.642-2.653L22 8.631s-1.241 1.255-2.647 2.66c-.865.865-1.951 1.383-3.057 1.456a4.027 4.027 0 01-2.501-.66l-.864.862 7.166 7.166-1.344 1.344zM4.291 6.995A2.835 2.835 0 003.9 8.438c0 .762.296 1.478.835 2.015l5.666 5.667 1.506-1.507-7.616-7.618z">
+                        </path>
+                    </svg></span>
+            </span>
+        </div>
+        <div>Travel Stories
+            <span class="space"></span>
+            <span>
+                <span><svg viewBox="0 0 24 24" width="24px" height="24px">
+                        <path
+                            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM4.1 13h3.3c0 2.2.5 4.3 1.4 6.3-2.6-1.1-4.4-3.5-4.7-6.3zm3.3-2H4.1c.3-2.8 2.1-5.2 4.7-6.3-.8 2-1.3 4.1-1.4 6.3zm4.6 9c-1 0-2.4-2.8-2.6-7h5.2c-.2 4.2-1.6 7-2.6 7zm-2.6-9C9.6 6.8 11 4 12 4s2.4 2.8 2.6 7H9.4zm10.5 0h-3.4c0-2.2-.5-4.3-1.4-6.3 2.7 1.1 4.5 3.5 4.8 6.3zm-4.7 8.3c.8-2 1.3-4.1 1.399-6.3H20c-.4 2.8-2.2 5.2-4.8 6.3z">
+                        </path>
+                    </svg></span>
+            </span>
+        </div>
+        <!--     <div>Flights 
+        <span class="space"></span>
+        <span>
+            <svg viewBox="0 0 24 24" width="24px" height="24px"><path d="M21.297 2.69C20.83 2.225 20.199 2 19.514 2c-1.005 0-2.132.481-3.036 1.387L14.41 5.455 6.144 4.082 2.697 7.528l6.536 3.105-1.028 1.026-3.44-.684-2.758 2.757L10.274 22l2.758-2.758-.684-3.442 1.026-1.025 3.109 6.541 3.447-3.447-1.379-8.271 2.067-2.069c1.524-1.524 1.827-3.69.679-4.839zm-2.056 3.459l-2.068 2.068-.71.71.165.99 1.214 7.282-.784.784-1.923-4.046-1.187-2.495-1.953 1.953-1.026 1.025-.737.738.203 1.021.48 2.42-.641.642-5.509-5.51.641-.643 2.42.482 1.021.202.737-.737 1.027-1.025 1.954-1.955-2.496-1.186-4.04-1.918.784-.784 7.278 1.208.988.165.709-.708 2.067-2.068c.603-.601 1.251-.815 1.658-.815.131 0 .305.021.403.119.248.249.181 1.226-.675 2.081z"></path></svg>
+        </span>
+    </div>
+  <div>Cruises 
+        <span>
+           <svg viewBox="0 0 24 24" width="24px" height="24px"><path d="M18.331 19.999l2.34-7.981L18 10.587V3.984h-5.003V3a1 1 0 00-2.001 0v.984H6.001v6.5l-2.955 1.522 2.365 7.993H3.007V22h17.986v-2.001h-2.662zM8 5.984h8v3.532l-3.98-2.132L8 9.454v-3.47zm-2.566 7.041L11 10.158V18h2v-7.823l5.295 2.836-2.047 6.985H7.497l-2.063-6.973z"></path></svg>
+        </span>
+    </div> -->
+        <div>More
+            <span class="space"></span>
+            <span>
+                <svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0">
+                    <circle cx="4.5" cy="11.9" r="2.5"></circle>
+                    <circle cx="19.5" cy="11.9" r="2.5"></circle>
+                    <circle cx="12" cy="11.9" r="2.5"></circle>
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="search">
+        <div class="searchBox">
+            <span><svg viewBox="0 0 24 24" width="1em" height="1em" class="d Vb UmNoP">
+                    <path
+                        d="M22 20.514l-5.517-5.519a8.023 8.023 0 001.674-4.904c0-4.455-3.624-8.079-8.079-8.079C5.624 2.012 2 5.636 2 10.091s3.624 8.079 8.079 8.079a8.03 8.03 0 004.933-1.695l5.512 5.514L22 20.514zm-11.921-4.431c-3.305 0-5.993-2.688-5.993-5.992s2.688-5.992 5.993-5.992a6 6 0 015.992 5.992 6 6 0 01-5.992 5.992z">
+                    </path>
+                </svg></span>
+            <input type="text" placeholder="Where to?">
+        </div>
+    </div>
+    <h2>Find Things to Do by interest</h3>
+        <p>Collections of our best bookable experiences</p>
+        <!-- <div class="boxButton"> -->
+        <!-- <button><svg viewBox="0 0 24 24" width="24px" height="24px">
+                    <path
+                        d="M10.304 3.506l-8.048 8.047a.644.644 0 000 .895l8.048 8.047a.624.624 0 00.883 0l.882-.883a.624.624 0 000-.883l-5.481-5.48h14.714a.625.625 0 00.623-.625v-1.248a.624.624 0 00-.623-.624H6.588l5.481-5.481a.624.624 0 000-.883l-.882-.883a.623.623 0 00-.883-.004c-.001.002-.002.003 0 .005z">
+                    </path>
+                </svg></button> -->
+        <div class="boxCards">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/15/57/ff/caption.jpg?w=400&h=-1&s=1"
+                alt="">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/15/58/c1/caption.jpg?w=400&h=-1&s=1"
+                alt="">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/15/59/79/caption.jpg?w=400&h=-1&s=1"
+                alt="">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/15/5b/64/caption.jpg?w=400&h=-1&s=1"
+                alt="">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/15/5b/ab/caption.jpg?w=400&h=-1&s=1"
+                alt="">
+
+        </div>
+        <div class="boxName">
+            <h1>Outdoors</h1>
+            <h1>Food and Drink</h1>
+            <h1>Art and Culture</h1>
+            <h1>By the Water</h1>
+            <h1>Browse all</h1>
+
+        </div>
+        <!-- <button><svg viewBox="0 0 24 24" width="24px" height="24px">
+                    <path
+                        d="M13.696 3.502a.624.624 0 00-.884.004l-.882.883a.624.624 0 000 .883l5.481 5.481H2.698a.624.624 0 00-.623.624v1.248c0 .346.279.623.623.625h14.714l-5.481 5.48a.624.624 0 000 .883l.882.883c.245.244.64.244.883 0l8.049-8.047a.646.646 0 000-.895l-8.049-8.048v-.004z">
+                    </path>
+                </svg></button>
+        </div> -->
+        <!-- <div id="rc">
+            <h2>Recent Search</h2>
+        </div> -->
+        <div class="moreToExplore">
+            <div>
+                <h2>More To Explore</h2>
+
+                <div id="expCards">
+                    <div>
+                        <img
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b3/47/36/3fc388de-ea6e-448c.jpg?w=800&h=500&s=1">
+                        <h3>The 6 Best Places to travel in November 2022 in the US</h3>
+                    </div>
+                    <div>
+                        <img
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b2/c1/a6/0acfe809-e16c-4b45.jpg?w=800&h=-1&s=1">
+                        <h3>Europe in the off-season: Paris</h3>
+                    </div>
+                    <div>
+                        <img
+                            src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b3/47/68/0898576b-ba17-4d48.jpg?w=800&h=500&s=1">
+                        <h3>Best new things to do in Japan in 2022</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>Top destinations for your next vacation</h2>
+        <div class="boxCards-2">
+
+            <img
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/cf/f9/eb/caption.jpg?w=400&h=400&s=1&cx=941&cy=299&chk=v1_18cfa51ea9b832b15689">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c2/7b/93/caption.jpg?w=400&h=400&s=1">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/cc/d8/b8/caption.jpg?w=400&h=400&s=1">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c0/b2/d2/caption.jpg?w=400&h=400&s=1">
+            <img
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/66/c1/04/caption.jpg?w=400&h=400&s=1&cx=1419&cy=1192&chk=v1_dfebacd25b15bec181fe">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/ae/5d/ec/caption.jpg?w=400&h=400&s=1">
+            <img
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c5/7c/68/caption.jpg?w=400&h=400&s=1&cx=950&cy=1766&chk=v1_9ee2771da71f55a7ac6a">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c0/87/b0/caption.jpg?w=400&h=400&s=1">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/cf/fa/42/caption.jpg?w=400&h=400&s=1">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c0/b1/4b/caption.jpg?w=400&h=400&s=1">
+        </div>
+        <!-- <div class="boxName-2">
+            <h1>Yellowstone
+                National Park, WY</h1>
+            <h1>Punta Cana,Dominican
+                Republic</h1>
+            <h1>Maui, HI</h1>
+            <h1>Orlando, FL</h1>
+            <h1>Sedano, AZ</h1>
+            <h1>Cancun, Mexico</h1>
+            <h1>New York City, NY</h1>
+            <h1>Las Vegas, NV</h1>
+            <h1>Yosemite National Park, CA</h1>
+            <h1>London, UK</h1>
+
+        </div> -->
+
+        <footer>
+            <div>
+            <div>
+                <ul>
+                    <h2>
+                        About Tripadvisor</h2>
+                    <li>About Us</li>
+                    <li>Press</li>
+                    <li>Resources and Policies</li>
+                    <li>Careers</li>
+                    <li>Investor Relations</li>
+                    <li>Trust & Safety</li>
+                    <li>Contact us</li>
+                    <li>Accessibility Statement</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <h2>Explore</h2>
+                    <li>Write a review </li>
+                    <li>Add a Place </li>
+                    <li>Join</li>
+                    <li> Travelers' Choice</li>
+                    <li> Insurance</li>
+                    <li> GreenLeaders</li>
+                    <li>Blog</li>
+                    <li>Help Center</li>
+                    <li>Tripadvisor Plus</li>
+                    <li>Travel Articles</li>
+                </ul>
+            </div>
+            <div>
+
+                <ul>
+                    <h2>Do Business With Us</h2>
+                    <li>Owners
+                    </li>
+                    <li>Business Advantage
+                    </li>
+                    <li>Sponsored Placements
+                    </li>
+                    <li>Advertise with Us
+                    </li>
+                    <li>Access our Content API
+                    </li>
+                    <li>Become an Affiliate
+                    </li>
+                    <h2>Get The App
+                    </h2>
+                    <li>iPhone App
+                    </li>
+                    <li>Android App
+                    </li>
+                </ul>
+            </div>
+            <div></div>
+            <div>
+
+                <ul>
+                    <h2>Tripadvisor Sites</h2>
+                    <li>Discover your dream destination with Jetsetter
+                    </li>
+                    <li>Book the best restaurants with TheFork
+                    </li>
+                    <li>Book tours and attraction tickets on Viator
+                    </li>
+                    <li>Read cruise reviews on Cruise Critic
+                    </li>
+                    <li>Get airline seating charts on Seat Guru
+                    </li>
+                    <li>Find vacation rentals on Flipkey
+                    </li>
+                    <li>Search for holiday rentals on Holiday Lettings
+                    </li>
+                    <li>Plan and book your next trip with Reco Trip Designers
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </footer>
+</body>
+
+</html>
+<script>
+    let expdata = [{ "imag": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b3/47/36/3fc388de-ea6e-448c.jpg?w=800&h=500&s=1", "d": "The 6 Best Places to travel in November 2022 in the US" }, { "imag": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b2/c1/a6/0acfe809-e16c-4b45.jpg?w=800&h=-1&s=1", "d": "Europe in the off-season: Paris" }, { "imag": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b3/47/68/0898576b-ba17-4d48.jpg?w=800&h=500&s=1", "d": "Best new things to do in Japan in 2022" }];
+    // function display(data){
+    //     data.foreach((el)=>{
+    //         let di=document.createElement("div");
+    //         let img=document.createElement("img");
+    //         img.setAttribute('src',el.imag);
+    //         let h=document.createElement('h3');
+    //         h.innerText="hello";
+
+    //         div.append(h);
+    //         document.getElementById("expCards").append(di);
+    //     })
+    // }
+    // display(expdata);
+
+
+</script>
