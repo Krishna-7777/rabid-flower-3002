@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trippy - Join</title>
+    <link rel="icon" href="Trippy.png">
+</head>
+<style>
+    * {
+        font-family: sans-serif;
+    }
+
+    body {
+        background-color: rgb(243, 255, 240);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 900px;
+    }
+
+    #popupForm {
+
+        width: 380px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        padding: 3%;
+        border-radius: 20px;
+        background-color: white;
+    }
+
+    img {
+        height: 70px;
+    }
+
+    #popupForm>button {
+        margin-left: 390px;
+
+    }
+
+    form {
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+    }
+
+    form>div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    form>h4,form>div>h4 {
+
+        margin: 9px 0px;
+    }
+    form>h2{
+        margin-bottom: 40px;
+    }
+    #im {
+        display: flex;
+        justify-content: center;
+        margin: 5%;
+    }
+    #submit{
+        margin: 4%10%;
+        padding: 3%5%;
+        background-color: black;
+        color: white;
+        border: 0ch;
+        border-radius: 156px;
+        font-size: large;
+    }
+    input{
+        padding: 2%1%;
+        border: 1.5px solid rgba(128, 128, 128, 0.624);
+        border-radius: 4px;
+    }
+    #footer{
+        text-align: center;
+    }
+    
+   span{
+    cursor: pointer;
+    font-style: oblique;
+    text-decoration: underline;
+   }
+</style>
+
+<body>
+    <div id="popupForm">
+        <div id="im"><img src="Trippy.png"></div>
+
+        <div id="join">
+            <form>
+                <h2>Join to unlock the best of Trippy</h2>
+                <div>
+                    <h4>First Name</h4>
+                    <h4 >Last Name</h4>
+                    <input id="fn" type="text" placeholder="First Name">
+                    <input id="nn" type="text" placeholder="Last Name">
+                </div>
+
+
+                <h4>Email address</h4>
+                <input id="em" type="email" placeholder="Email">
+                <h4>Create a password</h4>
+                <input id="pa" type="password" placeholder="Password">
+                <input type="submit" id="submit" value="Join">
+            </form>
+            <div id="footer">
+            <h4>Already a member?</h4>
+            <h4>
+                <span onclick="location.href='SignIn.html'">Sign in</span> using your Tripadvisor account
+            </h4></div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script src="join.js"></script>
