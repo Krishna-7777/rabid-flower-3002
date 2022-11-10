@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trippy - Your Cart</title>
+    <link rel="icon" href="Trippy.png">
+    <script src="https://kit.fontawesome.com/5598f0038c.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        font-family: sans-serif;
+    }
+
+    body {
+        width: 1140px;
+        margin: auto;
+        display: block;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom:1px solid rgb(21, 148, 105) ;
+    }
+    #spacenav{
+        width: 400px;
+    }
+    header>div{
+        border-radius: 25px;
+        height: 40px;
+        padding: 0%2%;
+        display: flex;
+        align-items: center;
+    }
+    h2{
+        text-align: center;
+        font-size: xx-large;
+        color: rgb(0, 220, 147);
+    }
+    
+    header>div:nth-last-child(1){
+        margin-right: 0px;
+    }
+    header>div:nth-last-child(2){
+        background-color: black;
+        color: white;
+    }
+    header>div:hover {
+        background-color: rgba(0, 0, 0, 0.088);
+       
+    }
+    header>div:nth-last-child(2):hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+    img{
+        height: 70px;
+        cursor: pointer;
+    }
+    h1:hover{
+        cursor: pointer;
+    }
+    footer{
+        background-color: rgba(127, 255, 212, 0.503);
+        margin: 0% ;
+        margin: 0%-33.5%;
+       
+    }
+    footer>div{
+        width: 1180px;
+        display: grid;
+        grid-template-columns:repeat(5,1fr) ;
+        margin-left: 18%;
+    }
+    footer li:hover{
+        font-style: oblique;
+        cursor: pointer;
+        padding: 5px;
+    }
+    #space{
+        height: 390px;
+    }
+    .logout:hover::before{
+        content: "LogOut";
+        color: white;
+    }
+    .logout:hover h4{
+        background-color: rgb(48, 48, 48);
+        display:none;
+        
+    }
+    header+h1{
+        font-size: 50px;
+    }
+    .underline{
+        text-decoration: underline;
+        cursor: pointer;
+        display: inline;
+    }
+    h6{
+        font-size: 30px;
+        margin: 4%0%;
+    }
+    .hide{
+        display: none;
+    }
+    #request>div{
+        background-color: rgb(0, 0, 0);
+        border-radius: 100px;
+        display: inline;
+        color: white;
+        padding: 1%2%;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <header>
+        <img onclick="location.href='Index.html'" src="Trippy.png" alt="">
+        <h1 onclick="location.href='Index.html'" >Trippy</h1>
+        <span id="spacenav"></span>
+        <div>
+             <h4><i class="fa-solid fa-pen"></i> Review</h4>
+        </div>
+        <div>
+            <h4><i class="fa-solid fa-heart"></i> Trips</h4>
+        </div>
+        <div>
+        <h4><i class="fa-solid fa-bell"></i> Alerts</h4>
+        </div>
+        <div id="statb">
+        <h4 id="status">Sign In</h4>
+        </div>
+        <div>
+       <h4><i class="fa-solid fa-cart-shopping"></i> Cart</h4>
+        </div>
+    </header>
+    <h1>Cart</h1>
+    <div class="underline"><h3 style="display: inline;"><i class="fa-solid fa-arrow-left-long"> </i></h2>See Places to explore </div>
+    <h6>Your Cart is Empty</h6>
+       <h6> Add Things to Do to your cart. Now you can shop for tours, attractions, and experiences. <div class="underline" onclick="location.href='NotMadeYet.html'">Explore Now</div></h6>
+       <hr>
+       <div id="request">
+<h6>Sign in to view saved items in your cart</h6>
+        <div onclick="location.href='SignIn.html'">Sign In</div>
+       </div>
+         
+    <div id="space"></div>
+</body>
+</html>
+<script src="logInOut.js"></script>
+<script src="cart.js"></script>
