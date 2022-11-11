@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripy - Search</title>
+    <link rel="icon" href="Trippy.png">
+    <script src="https://kit.fontawesome.com/5598f0038c.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        font-family: sans-serif;
+    }
+    
+    body {
+        width: 1140px;
+        margin: auto;
+        display: block;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.07) 1.95px 1.95px 2.6px;
+    }
+
+    #spacenav {
+        width: 310px;
+    }
+
+    header>div {
+        border-radius: 25px;
+        height: 40px;
+        padding: 0%2%;
+        display: flex;
+        align-items: center;
+    }
+
+    header>div:nth-last-child(1) {
+        margin-right: 346px;
+    }
+
+    header>div:nth-last-child(2) {
+        background-color: black;
+        color: white;
+        padding: 0%1%;
+    }
+
+    header>div:nth-last-child(2):hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+
+    header>div:hover {
+        background-color: rgba(0, 0, 0, 0.088);
+        cursor: pointer;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    #logo {
+        height: 70px;
+        margin-left: 385px;
+    }
+    footer{
+        background-color: rgba(127, 255, 212, 0.503);
+        margin: 0% ;
+        margin: 0%-33.5%;
+       position: relative;
+       bottom: -540px;
+    }
+    footer>div{
+        width: 1180px;
+        display: grid;
+        grid-template-columns:repeat(5,1fr) ;
+        margin-left: 18%;
+    }
+    footer li:hover{
+        font-style: oblique;
+        cursor: pointer;
+        padding: 5px;
+    }
+    #navdummy{
+        height: 90px;
+        box-shadow: none;
+    }
+    .logout:hover::before{
+        content: "LogOut";
+        color: white;
+    }
+    .logout:hover h4{
+        display:none;
+        
+    }
+</style>
+
+<body>
+    <div id="navdummy"></div>
+    <header>
+        <img onclick="location.href='Index.html'" src="Trippy.png" id="logo" src="Trippy.png" class="pointer" alt="">
+        <h1 onclick="location.href='Index.html'" src="Trippy.png" class="pointer">Trippy</h1>
+        <span id="spacenav"></span>
+        <div onclick="location.href='NotMadeYet.html'">
+            <h4><i class="fa-solid fa-pen"></i> Review</h4>
+        </div>
+        <div>
+            <h4><i class="fa-solid fa-heart"></i> Trips</h4>
+        </div>
+        <div>
+            <h4><i class="fa-solid fa-bell"></i> Alerts</h4>
+        </div>
+        <div id="statb" onclick="location.href='SignIn.html'">
+            <h4 id="status">Sign In</h4>
+        </div>
+        <div onclick="location.href='cart.html'">
+            <h4><i class="fa-solid fa-cart-shopping"></i> Cart</h4>
+        </div>
+    </header>
+
+    <div id="display"></div>
+
+        <footer>
+            <div>
+            <div>
+                <ul>
+                    <h2>
+                        About Tripadvisor</h2>
+                    <li>About Us</li>
+                    <li>Press</li>
+                    <li>Resources and Policies</li>
+                    <li>Careers</li>
+                    <li>Investor Relations</li>
+                    <li>Trust & Safety</li>
+                    <li>Contact us</li>
+                    <li>Accessibility Statement</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <h2>Explore</h2>
+                    <li>Write a review </li>
+                    <li>Add a Place </li>
+                    <li>Join</li>
+                    <li> Travelers' Choice</li>
+                    <li> Insurance</li>
+                    <li> GreenLeaders</li>
+                    <li>Blog</li>
+                    <li>Help Center</li>
+                    <li>Tripadvisor Plus</li>
+                    <li>Travel Articles</li>
+                </ul>
+            </div>
+            <div>
+
+                <ul>
+                    <h2>Do Business With Us</h2>
+                    <li>Owners
+                    </li>
+                    <li>Business Advantage
+                    </li>
+                    <li>Sponsored Placements
+                    </li>
+                    <li>Advertise with Us
+                    </li>
+                    <li>Access our Content API
+                    </li>
+                    <li>Become an Affiliate
+                    </li>
+                    <h2>Get The App
+                    </h2>
+                    <li>iPhone App
+                    </li>
+                    <li>Android App
+                    </li>
+                </ul>
+            </div>
+            <div></div>
+            <div>
+
+                <ul>
+                    <h2>Tripadvisor Sites</h2>
+                    <li>Discover your dream destination with Jetsetter
+                    </li>
+                    <li>Book the best restaurants with TheFork
+                    </li>
+                    <li>Book tours and attraction tickets on Viator
+                    </li>
+                    <li>Read cruise reviews on Cruise Critic
+                    </li>
+                    <li>Get airline seating charts on Seat Guru
+                    </li>
+                    <li>Find vacation rentals on Flipkey
+                    </li>
+                    <li>Search for holiday rentals on Holiday Lettings
+                    </li>
+                    <li>Plan and book your next trip with Reco Trip Designers
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </footer>
+
+
+        
+</body>
+
+</html>
+<script src="logInOut.js"></script>
+<script src="data.js"></script>
+<script src="displaydata.js"></script>
+
+<div>
+    <div><img src="" alt=""></div>
+    <div>
+        <h1></h1>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</div>
