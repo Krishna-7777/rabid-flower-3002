@@ -13,7 +13,7 @@
     * {
         font-family: sans-serif;
     }
-    
+
     body {
         width: 1140px;
         margin: auto;
@@ -71,9 +71,9 @@
     }
 
     .searchBox>input,
-    input::placeholder {
+    input::placeholder,form,input {
         border: 0px;
-        font-size: large;
+        font-size: x-large;
         width: 100%;
     }
 
@@ -236,34 +236,47 @@
         height: 70px;
         margin-left: 385px;
     }
-    footer{
+
+    footer {
         background-color: rgba(127, 255, 212, 0.503);
-        margin: 0% ;
+        margin: 0%;
         margin: 0%-33.5%;
-       
+
     }
-    footer>div{
+
+    footer>div {
         width: 1180px;
         display: grid;
-        grid-template-columns:repeat(5,1fr) ;
+        grid-template-columns: repeat(5, 1fr);
         margin-left: 18%;
     }
-    footer li:hover{
+
+    footer li:hover {
         font-style: oblique;
         cursor: pointer;
         padding: 5px;
     }
-    #navdummy{
+
+    #navdummy {
         height: 90px;
         box-shadow: none;
     }
-    .logout:hover::before{
+
+    .logout:hover::before {
         content: "LogOut";
         color: white;
     }
-    .logout:hover h4{
-        display:none;
-        
+
+    .logout:hover h4 {
+        display: none;
+
+    }
+
+    #submit{
+        display: none;
+    }
+    ul{
+        list-style: none;
     }
 </style>
 
@@ -337,7 +350,10 @@
     <div class="search">
         <div class="searchBox">
             <span><i class="fa-solid fa-magnifying-glass"></i></span>
-            <input type="text" placeholder="Where to?">
+            <form>
+                <input type="text" placeholder="Where to?">
+                <input type="submit" id="submit">
+            </form>
         </div>
     </div>
     <h2>Find Things to Do by interest</h3>
@@ -432,106 +448,90 @@
 
         <footer>
             <div>
-            <div>
-                <ul>
-                    <h2>
-                        About Tripadvisor</h2>
-                    <li>About Us</li>
-                    <li>Press</li>
-                    <li>Resources and Policies</li>
-                    <li>Careers</li>
-                    <li>Investor Relations</li>
-                    <li>Trust & Safety</li>
-                    <li>Contact us</li>
-                    <li>Accessibility Statement</li>
-                </ul>
-            </div>
-            <div>
-                <ul>
-                    <h2>Explore</h2>
-                    <li>Write a review </li>
-                    <li>Add a Place </li>
-                    <li>Join</li>
-                    <li> Travelers' Choice</li>
-                    <li> Insurance</li>
-                    <li> GreenLeaders</li>
-                    <li>Blog</li>
-                    <li>Help Center</li>
-                    <li>Tripadvisor Plus</li>
-                    <li>Travel Articles</li>
-                </ul>
-            </div>
-            <div>
+                <div>
+                    <ul>
+                        <h2>
+                            About Tripadvisor</h2>
+                        <li>About Us</li>
+                        <li>Press</li>
+                        <li>Resources and Policies</li>
+                        <li>Careers</li>
+                        <li>Investor Relations</li>
+                        <li>Trust & Safety</li>
+                        <li>Contact us</li>
+                        <li>Accessibility Statement</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <h2>Explore</h2>
+                        <li>Write a review </li>
+                        <li>Add a Place </li>
+                        <li>Join</li>
+                        <li> Travelers' Choice</li>
+                        <li> Insurance</li>
+                        <li> GreenLeaders</li>
+                        <li>Blog</li>
+                        <li>Help Center</li>
+                        <li>Tripadvisor Plus</li>
+                        <li>Travel Articles</li>
+                    </ul>
+                </div>
+                <div>
 
-                <ul>
-                    <h2>Do Business With Us</h2>
-                    <li>Owners
-                    </li>
-                    <li>Business Advantage
-                    </li>
-                    <li>Sponsored Placements
-                    </li>
-                    <li>Advertise with Us
-                    </li>
-                    <li>Access our Content API
-                    </li>
-                    <li>Become an Affiliate
-                    </li>
-                    <h2>Get The App
-                    </h2>
-                    <li>iPhone App
-                    </li>
-                    <li>Android App
-                    </li>
-                </ul>
-            </div>
-            <div></div>
-            <div>
+                    <ul>
+                        <h2>Do Business With Us</h2>
+                        <li>Owners
+                        </li>
+                        <li>Business Advantage
+                        </li>
+                        <li>Sponsored Placements
+                        </li>
+                        <li>Advertise with Us
+                        </li>
+                        <li>Access our Content API
+                        </li>
+                        <li>Become an Affiliate
+                        </li>
+                        <h2>Get The App
+                        </h2>
+                        <li>iPhone App
+                        </li>
+                        <li>Android App
+                        </li>
+                    </ul>
+                </div>
+                <div></div>
+                <div>
 
-                <ul>
-                    <h2>Tripadvisor Sites</h2>
-                    <li>Discover your dream destination with Jetsetter
-                    </li>
-                    <li>Book the best restaurants with TheFork
-                    </li>
-                    <li>Book tours and attraction tickets on Viator
-                    </li>
-                    <li>Read cruise reviews on Cruise Critic
-                    </li>
-                    <li>Get airline seating charts on Seat Guru
-                    </li>
-                    <li>Find vacation rentals on Flipkey
-                    </li>
-                    <li>Search for holiday rentals on Holiday Lettings
-                    </li>
-                    <li>Plan and book your next trip with Reco Trip Designers
-                    </li>
-                </ul>
+                    <ul>
+                        <h2>Tripadvisor Sites</h2>
+                        <li>Discover your dream destination with Jetsetter
+                        </li>
+                        <li>Book the best restaurants with TheFork
+                        </li>
+                        <li>Book tours and attraction tickets on Viator
+                        </li>
+                        <li>Read cruise reviews on Cruise Critic
+                        </li>
+                        <li>Get airline seating charts on Seat Guru
+                        </li>
+                        <li>Find vacation rentals on Flipkey
+                        </li>
+                        <li>Search for holiday rentals on Holiday Lettings
+                        </li>
+                        <li>Plan and book your next trip with Reco Trip Designers
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
         </footer>
 
 
-        
+
 </body>
 
 </html>
-<script>
-    let expdata = [{ "imag": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b3/47/36/3fc388de-ea6e-448c.jpg?w=800&h=500&s=1", "d": "The 6 Best Places to travel in November 2022 in the US" }, { "imag": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b2/c1/a6/0acfe809-e16c-4b45.jpg?w=800&h=-1&s=1", "d": "Europe in the off-season: Paris" }, { "imag": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/b3/47/68/0898576b-ba17-4d48.jpg?w=800&h=500&s=1", "d": "Best new things to do in Japan in 2022" }];
-    // function display(data){
-    //     data.foreach((el)=>{
-    //         let di=document.createElement("div");
-    //         let img=document.createElement("img");
-    //         img.setAttribute('src',el.imag);
-    //         let h=document.createElement('h3');
-    //         h.innerText="hello";
-
-    //         div.append(h);
-    //         document.getElementById("expCards").append(di);
-    //     })
-    // }
-    // display(expdata);
-
-
-</script>
+<script src="data.js"></script>
 <script src="logInOut.js"></script>
+<script src="search.js"></script>
