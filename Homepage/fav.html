@@ -187,7 +187,7 @@
         <div onclick="location.href='NotMadeYet.html'">
             <h4><i class="fa-solid fa-pen"></i> Review</h4>
         </div>
-        <div onclick="location.href='fav.html'">
+        <div>
             <h4><i class="fa-solid fa-heart"></i> Trips</h4>
         </div>
         <div>
@@ -290,19 +290,3 @@
 
 </html>
 <script src="logInOut.js"></script>
-<script src="data.js"></script>
-<script src="search.js"></script>
-<script src="displaydata.js"></script>
-<script>
-    if(newData.length>0){
-       document.getElementById('explore').innerText="Explore "+newData[0].secondaryText.split(',')[0]; 
-        document.getElementById('help').classList.add("hide");
-    }else{
-        console.log(squery);
- document.getElementById('explore').innerText="Sorry,We couldn't find "+ squery ;
-       document.getElementById('help').classList.add("visible");
- 
-    }
-    
-    
-</script>
